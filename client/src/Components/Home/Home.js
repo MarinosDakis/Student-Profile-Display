@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import useStyles from './styles';
 import axios from "axios";
+import { Typography, Grid, Card } from '@material-ui/core';
+import CardMedia from '@mui/material/CardMedia';
 
 export default function Home() {
 
@@ -37,21 +39,34 @@ export default function Home() {
     if (!studentData) return null;
 
     // studentList variables creates JSX using the information from API to be displayed.
-    const studentList = studentData.map((item) => (
-        <div key={item.firstName}>
-            {/* image */}
-            <div><img src={item.pic} alt={"profile of" + item.firstName + " " + item.lastName}></img></div>
-            {/* Full Name */}
-            <strong>{item.firstName + " " + item.lastName}</strong>
-            {/* Email */}
-            <div>{"Email: " + item.email}</div>
-            {/* Company */}
-            <div>{"Company: " + item.company}</div>
-            {/* Skill */}
-            <div>{"Skill: " + item.skill}</div>
-            {/* Grade Average */}
-            <div>{"Average: " + average(item.grades) + "%"}</div>
-        </div>
+    const studentList = studentData.map((item, index, {length}) => (
+        <Card key={item.firstName} className={classes.text}>
+            <Grid container className={classes.root} spacing={3}>
+                <Grid item>
+                    {/* image of Student */}
+                    <CardMedia 
+                        className={classes.img}
+                        component="img"
+                        image={item.pic} 
+                        height="150"
+                        width = "150"
+                        alt={"profile of" + item.firstName + " " + item.lastName}>
+                    </CardMedia>
+                </Grid>
+                <Grid item>
+                    {/* Student Full Name */}
+                    <Typography sx={{ fontSize: 50, color: "red" }}><strong>{(item.firstName + " " + item.lastName).toUpperCase()}</strong></Typography>
+                    {/* Student Email */}
+                    <Typography>{"Email: " + item.email}</Typography>
+                    {/* Student Company */}
+                    <Typography>{"Company: " + item.company}</Typography>
+                    {/* Student Skill */}
+                    <Typography>{"Skill: " + item.skill}</Typography>
+                    {/* Student Grade Average */}
+                    <Typography>{"Average: " + average(item.grades) + "%"}</Typography>
+                </Grid>
+            </Grid>
+        </Card>
     ));
 
     return (
