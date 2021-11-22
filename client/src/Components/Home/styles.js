@@ -19,6 +19,10 @@ export default makeStyles((theme) => ({
             fontSize: "50px",
             marginTop: "-10px",
             marginBottom: "10px",
-        }
-    }
+        },
+        '&.MuiTextField-root': {
+            fontFamily: "Raleway",
+            fontSize: "20px",
+        },
+    },
 }));
