@@ -43,7 +43,8 @@ export default function Home() {
         setFilteredStudentData(null);
 
         // filter the json api data with the given search value from all the students' first and last name
-        const filter = studentData.filter((data) => data.firstName.toLowerCase().includes(filterString) + data.lastName.toLowerCase().includes(filterString));
+        const filter = studentData.filter((data) => 
+            (data.firstName + " " + data.lastName).toLowerCase().includes(filterString));
 
         // set the filtered data
         setFilteredStudentData(filter);
