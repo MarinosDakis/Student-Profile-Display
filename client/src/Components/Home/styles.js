@@ -4,9 +4,6 @@ export default makeStyles((theme) => ({
     root: {
         padding: theme.spacing(3),
     },
-    background: {
-        backgroundColor: "#f0ecec",
-    },
     button: {
         color: "#c9c8c8",
         background: "none",
@@ -27,6 +24,7 @@ export default makeStyles((theme) => ({
             fontFamily: "Raleway",
             fontSize: "20px",
             marginLeft: "30px",
+            fontWeight: 500,
         },
         '&.MuiTypography-h1': {
             fontFamily: "Raleway",
@@ -41,5 +39,26 @@ export default makeStyles((theme) => ({
     },
     accordian: {
         marginTop: 15,
+    },
+    tags: {
+        padding: "5px 10px",
+        borderRadius: 5,
+        backgroundColor: "#d6d9db",
+        '&.MuiTypography-body1': {
+            fontFamily: "Raleway",
+            fontSize: "20px",
+            marginLeft: 10,
+        },
+    },
+    paper: {
+        '&.MuiPaper-root': {
+            margin: "8% 19%",
+            borderRadius: 10,
+        },
+    },
+    form: {
+        '&.MuiFormControl-root': {
+            marginLeft: 30
+        },
     },
 }));
