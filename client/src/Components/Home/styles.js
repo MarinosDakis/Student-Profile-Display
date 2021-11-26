@@ -47,7 +47,9 @@ export default makeStyles((theme) => ({
         '&.MuiTypography-body1': {
             fontFamily: "Raleway",
             fontSize: "20px",
-            marginLeft: 10,
+        },
+        '&.MuiGrid-spacing-xs-1': {
+            marginLeft: 30
         },
     },
     paper: {
