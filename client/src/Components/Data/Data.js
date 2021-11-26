@@ -12,7 +12,3 @@ export const fetchStudentData = () => {
         });
 }
 // end fetchStudentData function
-
-// average function calculates the average of a given array. [All elements of array are added and then it is divided by the number of elements]
-export const average = (array) => (array.reduce((a, b) => parseInt(a) + parseInt(b)) / array.length).toFixed(3);
-// end average function

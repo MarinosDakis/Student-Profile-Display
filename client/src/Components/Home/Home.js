@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import useStyles from './styles';
-import { Grid, TextField, Paper } from '@material-ui/core';
+import { Grid, Paper } from '@material-ui/core';
 import StudentInfo from "../StudentInfo/StudentInfo";
+import SearchBar from '../SearchBar/SearchBar';
 import { fetchStudentData } from "../Data/Data";
 
 export default function Home() {
@@ -94,15 +95,8 @@ export default function Home() {
         <Paper className={classes.paper} elevation={3}>
             <Grid container className={classes.root}>
                 {/* Search by student name */}
-                <Grid item xs={12}>
-                    <TextField inputProps={{ style: { fontSize: 20, fontFamily: "Raleway" } }} name="studentName" value={searchbarData.studentName} label="Search by name" variant="standard" fullWidth onChange={handleChange} />
-                </Grid>
-            </Grid>
-            <Grid container className={classes.root}>
-                {/* Search by student tag */}
-                <Grid item xs={12}>
-                    <TextField inputProps={{ style: { fontSize: 20, fontFamily: "Raleway" } }} name="studentTag" value={searchbarData.studentTag} label="Search by tag" variant="standard" fullWidth onChange={handleChange} />
-                </Grid>
+                <SearchBar type="name" handleChange={handleChange} />
+                <SearchBar type="tag" handleChange={handleChange} />
             </Grid>
 
             {filteredStudentData.map((item) => (
