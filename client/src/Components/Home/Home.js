@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useStyles from './styles';
 import { Grid, Paper } from '@material-ui/core';
+import Divider from '@mui/material/Divider';
 import StudentInfo from "../StudentInfo/StudentInfo";
 import SearchBar from '../SearchBar/SearchBar';
 import { fetchStudentData } from "../Data/Data";
@@ -32,11 +33,11 @@ export default function Home() {
             const filter = studentData.filter((data) => {
 
                 // query for full name
-                let filteredStudents = (data.firstName + " " + data.lastName).toLowerCase().includes(searchbarData.studentName);
+                let filteredStudents = (data.firstName + " " + data.lastName).toLowerCase().includes(searchbarData.studentName.toLowerCase());
 
                 if (data.tags !== undefined) {
                     // query for tags
-                    let filteredTags = (data.tags).toString().toLowerCase().includes(searchbarData.studentTag);
+                    let filteredTags = (data.tags).toString().toLowerCase().includes(searchbarData.studentTag.toLowerCase());
                     return filteredTags && filteredStudents;
                 }
 
@@ -99,11 +100,12 @@ export default function Home() {
                 <SearchBar type="tag" handleChange={handleChange} />
             </Grid>
 
-            {filteredStudentData.map((item) => (
+            {filteredStudentData.map((item, index, {length}) => (
                 <div key={item.firstName}>
                     <Grid container className={classes.root} spacing={3}>
                         <StudentInfo studentData={item} addTag={addTag} />
                     </Grid>
+                    <Divider />
                 </div>
             ))}
         </Paper>

@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     root: {
-        padding: theme.spacing(3),
+        padding: theme.spacing(2),
     },
     button: {
         color: "#c9c8c8",
@@ -54,13 +54,23 @@ export default makeStyles((theme) => ({
     },
     paper: {
         '&.MuiPaper-root': {
-            margin: "8% 19%",
+            margin: "8% 15%",
             borderRadius: 10,
         },
     },
     form: {
         '&.MuiFormControl-root': {
             marginLeft: 30
+        },
+    },
+    searchbar: {
+        '& .MuiFormLabel-root': {
+            fontSize: 20,
+            fontFamily: "Raleway",
+            color: "#6e6c6c",
+        },
+        '& .MuiInput-underline:after': {
+            border: "black",
         },
     },
 }));
