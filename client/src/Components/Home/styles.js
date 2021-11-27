@@ -5,12 +5,14 @@ export default makeStyles((theme) => ({
         padding: theme.spacing(2),
     },
     button: {
-        color: "#c9c8c8",
+        color: "#939393",
         background: "none",
         border: "none",
-        fontSize: "100px",
-        fontFamily: "Raleway",
+        fontSize: "60px",
+        fontFamily: "courier",
+        fontWeight: "bold",
         cursor: "pointer",
+        lineHeight: 0,
         '&:hover': {
             color: "black",
         }

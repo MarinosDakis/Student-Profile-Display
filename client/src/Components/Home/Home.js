@@ -100,7 +100,7 @@ export default function Home() {
                 <SearchBar type="tag" handleChange={handleChange} />
             </Grid>
 
-            {filteredStudentData.map((item, index, {length}) => (
+            {filteredStudentData.map((item) => (
                 <div key={item.firstName}>
                     <Grid container className={classes.root} spacing={3}>
                         <StudentInfo studentData={item} addTag={addTag} />

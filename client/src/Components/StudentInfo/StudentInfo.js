@@ -23,16 +23,18 @@ export default function StudentInfo({ studentData, addTag }) {
                     {/* image of Student */}
                     <CardMedia className={classes.img} component="img" image={studentData.pic} height="150" width="150" alt={"profile of" + studentData.firstName + " " + studentData.lastName}></CardMedia>
                 </Grid>
-                <Grid item>
-                    {/* Student Full Name */}
-                    <Typography variant="h1" className={classes.text}><strong>{(studentData.firstName + " " + studentData.lastName).toUpperCase()}</strong></Typography>
-                    
+                <Grid item xs>
+                    <Grid item xs>
+                        {/* Student Full Name */}
+                        <Typography variant="h1" className={classes.text}><strong>{(studentData.firstName + " " + studentData.lastName).toUpperCase()}</strong></Typography>
+                    </Grid>
+
                     {/* Student Email */}
                     <Typography className={classes.text}>{"Email: " + studentData.email}</Typography>
-                    
+
                     {/* Student Company */}
                     <Typography className={classes.text}>{"Company: " + studentData.company}</Typography>
-                    
+
                     {/* Student Skill */}
                     <Typography className={classes.text}>{"Skill: " + studentData.skill}</Typography>
 
@@ -61,7 +63,6 @@ export default function StudentInfo({ studentData, addTag }) {
                         label="Add a tag" variant="standard"
                         onKeyPress={e => e.key === "Enter" ? addTag(e, studentData) : null}
                     />
-
                 </Grid>
                 <Grid item>
                     {/* button to display student grades */}
@@ -69,7 +70,14 @@ export default function StudentInfo({ studentData, addTag }) {
                         <button className={classes.button}>{switchState ? '-' : '+'}</button>
                     </div>
                 </Grid>
+
             </Grid>
-        </div>
+            <Grid item>
+                    {/* button to display student grades */}
+                    <div onClick={handleSwitchState}>
+                        <button className={classes.button}>{switchState ? '-' : '+'}</button>
+                    </div>
+                </Grid>
+        </div >
     )
 }
