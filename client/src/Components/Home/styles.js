@@ -12,7 +12,7 @@ export default makeStyles((theme) => ({
         fontFamily: "courier",
         fontWeight: "bold",
         cursor: "pointer",
-        lineHeight: 0,
+        lineHeight: 0.5,
         '&:hover': {
             color: "black",
         }
@@ -50,13 +50,15 @@ export default makeStyles((theme) => ({
             fontFamily: "Raleway",
             fontSize: "20px",
         },
-        '&.MuiGrid-spacing-xs-1': {
-            marginLeft: 30
+    },
+    tagGrid: {
+        '&.MuiGrid-root': {
+            margin: "0 5px 5px 30px",
         },
     },
     paper: {
         '&.MuiPaper-root': {
-            margin: "8% 15%",
+            margin: "8% 17%",
             borderRadius: 10,
         },
     },
@@ -74,5 +76,11 @@ export default makeStyles((theme) => ({
         '& .MuiInput-underline:after': {
             border: "black",
         },
+        '& .MuiInputBase-root': {
+            marginBottom: 10,
+        },
     },
+    gradeList: {
+        margin: "10px 0",
+    }
 }));

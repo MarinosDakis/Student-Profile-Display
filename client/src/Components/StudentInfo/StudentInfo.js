@@ -24,10 +24,8 @@ export default function StudentInfo({ studentData, addTag }) {
                     <CardMedia className={classes.img} component="img" image={studentData.pic} height="150" width="150" alt={"profile of" + studentData.firstName + " " + studentData.lastName}></CardMedia>
                 </Grid>
                 <Grid item xs>
-                    <Grid item xs>
-                        {/* Student Full Name */}
-                        <Typography variant="h1" className={classes.text}><strong>{(studentData.firstName + " " + studentData.lastName).toUpperCase()}</strong></Typography>
-                    </Grid>
+                    {/* Student Full Name */}
+                    <Typography variant="h1" className={classes.text}><strong>{(studentData.firstName + " " + studentData.lastName).toUpperCase()}</strong></Typography>
 
                     {/* Student Email */}
                     <Typography className={classes.text}>{"Email: " + studentData.email}</Typography>
@@ -41,13 +39,15 @@ export default function StudentInfo({ studentData, addTag }) {
                     {/* Student Grade Average */}
                     <Typography className={classes.text}>{"Average: " + average(studentData.grades) + "%"}</Typography>
 
-                    {/* Displays student grades if switch is turned on */}
-                    {switchState && studentData.grades.map((grade, index) => (
-                        <Typography key={index} className={classes.text}>Test {(index + 1)}: {grade}%</Typography>
-                    ))}
+                    {/* Displays student grades if button is pressed */}
+                    <div className={switchState ? classes.gradeList : ""}>
+                        {switchState && studentData.grades.map((grade, index) => (
+                            <Typography key={index} className={classes.text}>Test {(index + 1)}: {grade}%</Typography>
+                        ))}
+                    </div>
 
                     {/* Student tags */}
-                    <Grid container spacing={1}>
+                    <Grid className={classes.tagGrid} container spacing={1}>
                         {studentData.tags && studentData.tags.map((tag, index) => (
                             <Grid item key={index}>
                                 <Typography className={classes.tags}>{tag}</Typography>
@@ -64,6 +64,7 @@ export default function StudentInfo({ studentData, addTag }) {
                         onKeyPress={e => e.key === "Enter" ? addTag(e, studentData) : null}
                     />
                 </Grid>
+
                 <Grid item>
                     {/* button to display student grades */}
                     <div onClick={handleSwitchState}>
@@ -72,12 +73,6 @@ export default function StudentInfo({ studentData, addTag }) {
                 </Grid>
 
             </Grid>
-            <Grid item>
-                    {/* button to display student grades */}
-                    <div onClick={handleSwitchState}>
-                        <button className={classes.button}>{switchState ? '-' : '+'}</button>
-                    </div>
-                </Grid>
         </div >
     )
 }
