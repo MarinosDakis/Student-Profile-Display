@@ -20,9 +20,9 @@ If your app had a different instructions to start, then you must edit this READM
 
 [1] Clone repository or download files.
 
-[2] Open folder in code editor and make sure you are in the correct path that contains client.
+[2] Open folder in code editor and make sure you are in the correct path that contains the client folder.
 
-[3] navigate to the client directory: "cd client".
+[3] Navigate to the client directory: "cd client".
 
 [4] If you don't have the node modules folder, type "npm install" in the terminal. Then, type "npm start" in the terminal.
 
