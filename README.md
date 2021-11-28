@@ -16,6 +16,17 @@ Your app should be running on `http://localhost:3000` or whichever PORT number y
 
 If your app had a different instructions to start, then you must edit this README.md file and list out the instructions to successfully run your code.
 
+### How to build:
+
+[1] Clone repository or download files.
+
+[2] Open folder in code editor and make sure you are in the correct path that contains client.
+
+[3] navigate to the client directory: "cd client".
+
+[4] If you don't have the node modules folder, type "npm install" in the terminal. Then, type "npm start" in the terminal.
+
+[5] If successful [http://localhost:3000](http://localhost:3000) will load the project.
 
 
 
