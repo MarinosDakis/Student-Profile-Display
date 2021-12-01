@@ -4,7 +4,7 @@ import { Grid, Paper } from '@material-ui/core';
 import Divider from '@mui/material/Divider';
 import StudentInfo from "../StudentInfo/StudentInfo";
 import SearchBar from '../SearchBar/SearchBar';
-import { fetchStudentData } from "../Data/Data";
+import { fetchStudentData } from "../../Helpers/Data/Data";
 
 export default function Home() {
 
